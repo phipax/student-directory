@@ -19,7 +19,7 @@ def input_students
   students = []
   name = gets.chomp
   while !name.empty? do
-    students.push("name: "+name+", cohort: :november")
+    students.push(name+" (november cohort)")
     puts "we have #{students.count} students"
     name = gets.chomp
   end
