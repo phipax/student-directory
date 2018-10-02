@@ -1,3 +1,4 @@
+=begin
 students = [
   {name: "Dr. Hannibal Lecter", cohort: :november},
   {name: "Darth Vader", cohort: :november},
@@ -11,6 +12,20 @@ students = [
   {name: "Joffrey Baratheon", cohort: :november},
   {name: "Norman Bates", cohort: :november}
 ]
+=end
+def input_students
+  puts "Enter the name of the student"
+  puts "Hit enter twice to finish"
+  students = []
+  name = gets.chomp
+  while !name.empty? do
+    students.push("name: "+name+", cohort: :november")
+    puts "we have #{students.count} students"
+    name = gets.chomp
+  end
+ puts students
+  students
+end
 def print_header
 #first we print the list of students
   puts "The students of Villians Academy"
@@ -18,7 +33,7 @@ def print_header
 end
 def print(names)
   names.each do |x|
-    puts "#{x[:name]} (#{x[:cohort]} cohort)"
+    puts "#{x}"
   end
 end
 def print_footer(names)
@@ -26,6 +41,7 @@ def print_footer(names)
   puts "Overall, we have #{names.count} great students"
 end
 
+students = input_students
 print_header
 print(students)
 print_footer(students)
