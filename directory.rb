@@ -32,8 +32,8 @@ def print_header
   puts "-------------"
 end
 def print(names)
-  names.each do |x|
-    puts "#{x}"
+  names.each.with_index(1) do |x,y|
+    puts "#{y}: #{x}"
   end
 end
 def print_footer(names)
