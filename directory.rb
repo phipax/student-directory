@@ -43,5 +43,11 @@ end
 
 students = input_students
 print_header
-print(students)
-print_footer(students)
+puts "enter char of choice"
+chr = gets.chomp
+s = []
+students.each do |x|
+  x[0] == chr ? s.push(x) : false
+end
+print(s)
+print_footer(s)
